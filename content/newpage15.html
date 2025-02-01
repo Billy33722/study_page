@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Текстовые поля</title>
+        <charset="utf-8">
+    </head>
+    <body>
+        <h1>Текстовые поля</h1>
+        <p>Однострочное текстовое поле создается с помощью элемента <b>input</b>, когда его атрибут <b>type</b> имеет значение <b>text</b>:</p>
+        <pre style="width: 250px; height: 15px; border: solid 1px silver; padding: 5px; line-height: 1.2;">
+<b>&lt;input type="text" name="login" /></b>
+        </pre>
+        <p>С помощью ряда дополнительных атрибутов можно настроить текстовое поле:</p>
+            <ul>
+                <li><b>dir</b>: устанавливает направление текста</li>
+                <li><b>list</b>: устанавливает список подсказок для ввода в поле</li>
+                <li><b>maxlength</b>: максимально допустимое количество символов в текстовом поле</li>
+                <li><b>pattern</b>: определяет шаблон, которому должен соответствовать вводимый текст</li>
+                <li><b>placeholder</b>: устанавливает текст, который по умолчанию отображается в текстовом поле</li>
+                <li><b>readonly</b>: делает текстовом поле доступным только для чтения</li>
+                <li><b>required</b>: указывает, что текстовое поле обязательно должно иметь значение</li>
+                <li><b>size</b>: устанавливает ширину текстового поля в видимых символах</li>
+                <li><b>value</b>: устанавливает значение по умолчанию в текстовом поле</li>
+            </ul>
+        <p>Применим некоторые атрибуты:</p>
+            <pre style="width: 800px; height: 130px; border: solid 1px silver; padding: 5px; line-height: 1.2;">
+<b>&lt;form>
+    &lt;p>&lt;input type="text" name="userName" placeholder="Введите имя" size="18" />&lt;/p>
+    &lt;p>&lt;input type="text" name="userPhone" placeholder="Введите номер телефона" size="18" maxlength="11" />&lt;/p>
+    &lt;p>
+        &lt;button type="submit">Отправить&lt;/button> 
+        &lt;button type="reset">Отмена&lt;/button>
+    &lt;/p>
+&lt;/form></b>
+            </pre>
+        <div style="margin-top: 20px;"><b>Результат:</b></div>
+            <form style="border: solid 1px black; padding: 5px; width: 300px;">
+                <p><input type="text" name="UserName" placeholder="Введите имя" size="18" /></p>
+                <p><input type="text" name="UserPhone" placeholder="Введите номер телефона" size="18" maxlength="11" /></p>
+                <p>
+                    <button type="submit">Отправить</button>
+                    <button type="reset">Отмена</button>
+                </p>
+            </form>
+        <p>В этом примере во втором текстовом поле сразу устанавливаются атрибуты <b>maxlength</b> и <b>size</b>.<br>При этом <b>size</b> - то есть количество символов, которые помещаются в видимое пространство поля больше, чем допустимое количество символов.<br>Однако все равно ввести символов больше, чем <b>maxlength</b>, мы не сможем.</p>
+        <p>В данном случае также важно различать атрибуты <b>value</b> и <b>placeholder</b>, хотя оба устанавливают видимый текст в поле.<br>Однако <b>placeholder</b> устанавливает своего рода подсказку или приглашение к вводу, поэтому он обычно отмечается серым цветом.<br>В то время как значение <b>value</b> представляет введенный в поле текст по умолчанию:</p>
+            <pre style="width: 535px; height: 35px; border: solid 1px silver; padding: 5px; line-height: 1.2;">
+<b>&lt;p>&lt;input type="text" name="userName" value="Том" />&lt;/p>
+&lt;p>&lt;input type="text" name="userPhone" placeholder="Номер телефона" />&lt;/p></b>
+            </pre>
+        <div style="margin-top: 20px;"><b>Результат:</b></div>
+            <form style="border: solid 1px black; padding: 5px; width: 300px;">
+                <p><input type="text" name="userName" value="Том" /></p>
+                <p><input type="text" name="userPhone" placeholder="Номер телефона" /></p>
+                <p>
+                    <button type="submit">Отправить</button>
+                    <button type="reset">Отмена</button>
+                </p>
+            </form>
+        <p>Атрибуты <b>readonly</b> и <b>disabled</b> делают текстовое поле недоступным, однако сопровождаются разным визуальным эффектом.<br>В случае с <b>disabled</b> текстовое поле затеняется:</p>
+            <pre style="width: 550px; height: 35px; border: solid 1px silver; padding: 5px; line-height: 1.2;">
+<b>&lt;p>&lt;input type="text" name="userName" value="Том" readonly />&lt;/p>
+&lt;p>&lt;input type="text" name="userPhone" value="+12345678901" disabled />&lt;/p></b>
+            </pre>
+        <div style="margin-top: 20px;"><b>Результат:</b></div>
+            <form style="border: solid 1px black; padding: 5px; width: 300px;">
+                <p><input type="text" name="userName" value="Том" readonly /></p>
+                <p><input type="text" name="userPhone" value="+12345678901" disabled /></p>
+                <p>
+                    <button type="submit">Отправить</button>
+                    <button type="reset">Отмена</button>
+                </p>
+            </form>
+        <p>Среди атрибутов текстового поля также следует отметить такой атрибут как <b>list</b>.<br>Он содержит ссылку на элемент <b>datalist</b>, который определяет набор значений, появляющихся в виде подсказки при вводе в текстовое поле. Например:</p>
+            <pre style="width: 665px; height: 180px; border: solid 1px silver; padding: 5px; line-height: 1.2;">
+<b>&lt;form>
+    &lt;p>&lt;input list="phonesList" type="text" name="model" placeholder="Выберите модель" />&lt;/p>
+    &lt;p>
+        &lt;button type="submit">Отправить&lt;/button>
+    &lt;/p>
+&lt;/form>
+    &lt;datalist id="phonesList">
+        &lt;option value="iPhone 6S" label="54000"/>
+        &lt;option value="Lumia 950">35000&lt;/option>
+        &lt;option value="Nexus 5X"/>
+    &lt;/datalist></b>
+            </pre>
+        <div style="margin-top: 20px;"><b>Результат:</b></div>
+            <form style="border: solid 1px black; padding: 5px; width: 300px;">
+                <p><input list="phonesList" type="text" name="model" placeholder="Выберите модель" /></p>
+                <p>
+                    <button type="submit">Отправить</button>
+                </p>
+            </form>
+        <datalist id="phonesList">
+            <option value="iPhone 6S" label="54000"/>
+            <option value="Lumia 950">35000</option>
+            <option value="Nexus 5X"/>
+        </datalist>
+        <p>Атрибут <b>list</b> текстового поля указывает на <b>id</b> элемента <b>datalist</b>. Сам элемент <b>datalist</b> с помощью вложенных элементов <b>option</b> определяет элементы списка.<br>И при вводе в текстовое поле этот список отображается в виде подсказки.</p>
+        <h3>Направление текста</h3>
+        <p>Атрибут <b>dir</b> задает направление ввода текста. Он может принимать два значения: <b>ltr</b> (слева направо) и <b>rtl</b> (справа налево):</p>
+            <pre style="width: 335px; height: 20px; border: solid 1px silver; padding: 5px; line-height: 1.2;">
+<b>&lt;input type="text" name="username" dir="rtl" /></b>
+            </pre>
+        <h2>Поле поиска</h2>
+        <p>Для создания полей поиска предназначен элемент input с атрибутом type="search". Формально он представляет собой простое текстовое поле:</p>
+            <pre style="width: 300px; height: 60px; border: solid 1px silver; padding: 5px; line-height: 1.2;">
+<b>&lt;form>
+    &lt;input type="search" name="term" />
+    &lt;input type="submit" value="Поиск" />
+&lt;/form></b>
+            </pre>
+        <div style="margin-top: 20px;"><b>Результат:</b></div>
+            <form style="border: solid 1px black; padding: 5px; width: 300px;">
+                <input type="search" name="term" />
+                <input type="submit" value="Поиск" />
+            </form>
+        <h2>Поле ввода пароля</h2>
+        <p>Для ввода пароля используется элемент <b>input</b> с атрибутом <b>type="password"</b>. Его отличительной чертой является то, что вводимые символы маскируются точками:</p>
+            <pre style="width: 380px; height: 80px; border: solid 1px silver; padding: 5px; line-height: 1.2;">
+<b>&lt;form>
+    &lt;p>&lt;input type="text" name="login" />&lt;/p>
+    &lt;p>&lt;input type="password" name="password" />&lt;/p>
+    &lt;input type="submit" value="Авторизация" />
+&lt;/form></b>
+            </pre>
+        <div style="margin-top: 20px;"><b>Результат:</b></div>
+            <form style="border: solid 1px black; padding: 5px; width: 300px;">
+                <p><input type="text" name="login" /></p>
+                <p><input type="password" name="password" /></p>
+                <input type="submit" value="Авторизация" />
+            </form>
+    </body>
+</html>

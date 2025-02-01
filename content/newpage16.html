@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Метки и автофокус</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Метки и автофокус</h1>
+        <p>Вместе с полями ввода нередко используются метки, которые представлены элементом <b>label</b>.<br>Метки создают аннотацию или заголовок к полю ввода, указывают, для чего это поле предназначено.</p>
+        <p>Для связи с полем ввода метка имеет атрибут <b>for</b>, который указывает на <b>id</b> поля ввода:</p>
+            <pre style="width: 450px; height: 220px; border: solid 1px silver; padding: 5px; line-height: 1.2;">
+<b>&lt;form>
+    &lt;p>
+        &lt;label for="login">Логин:&lt;/label>
+        &lt;input type="text" id="login" name="login" />
+    &lt;/p>
+    &lt;p>
+        &lt;label for="password">Пароль:&lt;/label>
+        &lt;input type="password" id="password" name="password" />
+    &lt;/p>
+    &lt;p>
+        &lt;button type="submit">Отправить&lt;/button> 
+        &lt;button type="reset">Отмена&lt;/button>
+    &lt;/p>
+&lt;/form></b>
+            </pre>
+        <p>Так, текстовое поле здесь имеет атрибут <b>id="login"</b>. Поэтому у связанной с ним метки устанавливается атрибут <b>for="login"</b>.<br>Нажатие на эту метку позволяет перевести фокус на текстовое поле для ввода логина:</p>    
+        <div style="margin-top: 20px;"><b></b></div>
+            <form style="border: solid 1px black; padding: 5px; width: 300px;">
+                <p>
+                    <label for="login">Логин:</label>
+                    <input type="text" id="login" name="login" />
+                </p>
+                <p>
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" />
+                </p>
+                <p>
+                    <button type="submit">Отправить</button>
+                    <button type="reset">Отмена</button>
+                </p>
+            </form>
+        <p>Собственно на этом роль меток и заканчивается. Также мы можем установить автофокус по умолчанию на какое-либо поле ввода.<br>Для этого применяется атрибут <b>autofocus</b>:</p>
+            <pre style="width: 450px; height: 220px; border: solid 1px silver; padding: 5px; line-height: 1.2;">
+<b>&lt;form>
+    &lt;p>
+        &lt;label for="login" >Логин:&lt;/label>
+        &lt;input type="text" id="login" autofocus name="login" />
+    &lt;/p>
+    &lt;p>
+        &lt;label for="password">Пароль:&lt;/label>
+        &lt;input type="password" id="password" name="password" />
+    &lt;/p>
+    &lt;p>
+        &lt;button type="submit">Отправить&lt;/button>
+        &lt;button type="reset">Отмена&lt;/button>
+    &lt;/p>
+&lt;/form></b>
+            </pre>
+        <div style="margin-top: 20px;"><b></b></div>
+            <form style="border: solid 1px black; padding: 5px; width: 300px;">
+                <p>
+                    <label for="login">Логин:</label>
+                    <input type="text" autofocus id="login" name="login" />
+                </p>
+                <p>
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" />
+                </p>
+                <p>
+                    <button type="submit">Отправить</button>
+                    <button type="reset">Отмена</button>
+                </p>
+            </form>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Таблицы</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Таблицы</h1>
+        <p>Для создания таблиц в html используется элемент table. Каждая таблица между тегами <b>< table ></b> и <b>< /table ></b> содержит строки, который представлены элементом tr. А каждая строка между тегами <b>< tr ></b> и <b>< /tr ></b> содержит ячейки в виде элементов td.</p>
+
+        <table>
+            <tr>
+                <td>Компания</td> <td>Модель</td> <td>Цена</td>
+            </tr>
+            <tr>
+                <td>Samsung</td> <td>Galaxy s21</td> <td>319€</td>
+            </tr>
+            <tr>
+                <td>Samsung</td> <td>Galaxy s22</td> <td>378€</td>
+            </tr>
+            <tr>
+                <td>Samsung</td> <td>Galaxy s23</td> <td>685€</td>
+            </tr>
+            <tr>
+                <td>Samsung</td> <td>Galaxy s24</td> <td>799€</td>
+            </tr>
+            <tr>
+                <td>Samsung</td> <td>Galaxy s25</td> <td>899€</td>
+            </tr>
+        </table>
+        <div style="margin-bottom: 50px;"> Здесь у нас в таблице 4 строки, и каждая строка имеет по три столбца.</div>
+
+        <div style="margin-bottom: 20px;">При этом в данном случае первая строка выполняет роль заголовка, а остальные три строки собственно являются содержимым таблицы. Разделения заголовков, футера и тела таблицы в html предусмотрены соответственно элементы <b>thead</b>, <b>tfoot</b> и <b>tbody</b>. Для их применения изменим таблицу следующим образом:</div>
+        
+        <table>
+            <caption><b>Цены на Самсунг</b></caption>
+            <thead>
+                <tr>
+                    <th>Компания</th> <th>Модель</th> <th>Цена</th>
+                </tr>
+                <tbody>
+                <tr>
+                    <td>Samsung</td> <td>Galaxy s21</td> <td>319€</td>
+                </tr>
+                <tr>
+                    <td>Samsung</td> <td>Galaxy s22</td> <td>378€</td>
+                </tr>
+                <tr>
+                    <td>Samsung</td> <td>Galaxy s23</td> <td>685€</td>
+                </tr>
+                <tr>
+                    <td>Samsung</td> <td>Galaxy s24</td> <td>799€</td>
+                </tr>
+                <tr>
+                    <td>Samsung</td> <td>Galaxy s25</td> <td>899€</td>
+                </tr>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Итого:</td> <td>3080€</td>
+                </tr>
+            </tfoot>
+        </table>
+        <p>В элемент <b>thead</b> заключается строка заголовков. Для ячеек заголовок используется не элемент <b>td</b>, а <b>th</b>. Элемент <b>th</b> выделяет заголовок жирным. А все остальные строки заключаются в <b>tbody</b></p>
+        <p>Элемент <b>tfoot</b> определяет подвал таблицы или футер. Здесь обычно выводится некоторая вспомогательная информация по отношению к таблице.</p>
+        <p>Кроме собственно заголовоков столбцов с помощью элемента <b>caption</b> мы можем задать общий заголовок для таблицы.</p>
+        <p style="margin-bottom: 50px;">Также стоит отметить, что футер таблицы содержит только один столбец, который раздвигается по ширине трех столбцов с помощью атрибута <b>colspan="3"</b>.</p>
+        <p>Атрибут <b>colspan</b> указывает на какое количество столбцов раздвигается данная ячейка. Также с помощью атрибута <b>rowspan</b> мы можем раздвигать ячейку на определенное количество строк.
+            <br><a href="D:/html/content/examplepage.html"> Например:</a>
+        </p>
+        <table>
+            <tr>
+                <td rowspan="2" style="background-color: green; width: 60px; height: 60; border: solid 1px silver; text-align: center;">1</td>
+                <td style="width: 60px; height: 60; border: solid 1px silver; text-align: center;">2</td>
+                <td style="width: 60px; height: 60; border: solid 1px silver; text-align: center;">3</td>
+            </tr>
+            <tr>
+                <td style="width: 60px; height: 60; border: solid 1px silver; text-align: center;">4</td>
+                <td style="width: 60px; height: 60; border: solid 1px silver; text-align: center;">5</td>
+            </tr>
+            <tr>
+                <td style="width: 60px; height: 60; border: solid 1px silver; text-align: center;">6</td>
+                <td colspan="2" style="background-color: red; width: 60px; height: 60; border: solid 1px silver; text-align: center;">7</td>
+            </tr>
+        </table>
+    </body>
+</html>

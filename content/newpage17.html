@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Элементы для ввода чисел</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Элементы для ввода чисел</h1>
+        <h3>Простое числовое поле</h3>
+        <p>Для ввода чисел используется элемент <b>input</b> с атрибутом <b>type="number"</b>. Он создает числовое поле, которое мы можем настроить с помощью следующих атрибутов:</p>
+            <ul>
+                <li><b>min</b>: минимально допустимое значение</li>
+                <li><b>max</b>: максимально допустимое значение</li>
+                <li><b>readonly</b>: доступно только для чтения</li>
+                <li><b>required</b>: указывает, что данное поле обязательно должно иметь значение</li>
+                <li><b>step</b>: значение, на которое будет увеличиваться число в поле</li>
+                <li><b>value</b>: значение по умолчанию</li>
+        </ul>
+        <p>Используем числовое поле:</p>
+            <pre style="width: 560px; height: 140px; border: solid 1px silver; padding: 5px; line-height: 1.2;">
+<b>&lt;form>
+    &lt;p>
+        &lt;label for="age">Возраст:&lt;/label>
+        &lt;input type="number" id="age" step="1" min="1" max="100" name="age" />
+    &lt;/p>
+    &lt;p>
+        &lt;button type="submit">Отправить&lt;/button>
+    &lt;/p>
+&lt;form></b>
+            </pre>
+        <p>Здесь числовое поле по умолчанию имеет значение <b>10 (value="10")</b>, минимально допустимое значение, которое мы можем ввести, <b>- 1</b>,<br>а максимальное допустимое значение <b>- 100</b>. И атрибут <b>step="1"</b> устанавливает, что значение будет увеличиваться на единицу.</p>
+        <p>В зависимости от браузера визуализация этого поля может отличаться:</p>
+            <form style="border: solid 1px black; padding: 5px; width: 300px;">
+                <p>
+                    <label for="age">Возраст:</label>
+                    <input type="number" id="age" step="1" min="1" max="100" name=":age" />
+                </p>
+                <p>
+                    <button type="submit">Отправить</button>
+                </p>
+            </form>
+        <p>Но как правило, у большинства современных браузеров, кроме <b>IE 11</b> и <b>Microsoft Edge</b>, справа в поле ввода имеются стрелки для увеличения/уменьшения значения на величину,<br>указанную в атрибуте <b>step</b>.</p>
+        <p>Как и в случае с текстовым полем мы можем здесь прикрепить список <b>datalist</b> с диапазоном возможных значений:</p>
+            <pre style="border: solid 1px silver; width: 730px; height: 230px; padding: 5px">
+<b>&lt;form>
+    &lt;p>
+        &lt;label for="price">Цена&lt;label>
+        &lt;input type="number" list="priceList"
+            step="1000" min="1000" max="100000" value="10000" id="price" name="price" />
+    &lt;/p>
+    &lt;p>
+        &lt;button type="submit">Отправить&lt;button>
+    &lt;/p>
+&lt;/form>
+&lt;datalist id="priceList">
+    &lt;option value="15000">
+    &lt;option value="20000">
+    &lt;option value="25000">
+&lt;/datalist></b>
+            </pre>
+		<div style="margin-top: 25px;"><b>Результат:</b></div>
+			<form style="border: solid 1px black; padding: 5px; width: 300px;">
+				<p>
+					<label for="price">Цена</label>
+					<input type="number" list="priceList"
+						step="1000" min="1000" max="100000" value="10000" id="price" name="price" />
+				</p>
+				<p>
+					<button type="submit">Отправить</button>
+				</p>
+			</form>
+			<datalist id="priceList">
+				<option value="15000"></option>
+				<option value="20000"></option>
+				<option value="25000"></option>
+			</datalist>
+        <h3>Ползунок</h3>
+        <p>Ползунок представляет шкалу, на которой мы можем выбрать одно из значений. Для создания ползунка применяется элемент <b>input</b> с атрибутом <b>type="range"</b>.<br>Во многом ползунок похож на простое поле для ввода чисел. Он также имеет атрибуты <b>min, max, step</b> и <b>value</b>:</p>
+            <pre style="border: solid 1px silver; width: 670px; height: 140px; padding: 5px;">
+<b>&lt;form>
+    &lt;p>                    
+        &lt;label for="price">Цена&lt;label>           
+        1&lt;input type="range" id="price" step="1" min="1" max="100" id="price" name="price" />100
+    &lt;/p>
+    &lt;p>
+        &lt;button type="submit">Отправить&lt;button>
+    &lt;/p>
+&lt;/form></b>
+            </pre>
+        <div style="margin-top: 25px;"><b>Результат</b>
+            <form style="border: solid 1px black; padding: 5px; width: 300px;">
+                <p>
+                    <label for="price">Цена</label>
+                    1<input type="range" id="price" step="1" min="1" max="100" id="price" name="price" />100
+                </p>
+                <p>
+                    <button type="submit">Отправить</button>
+                </p>
+            </form>
+    </body>
+</html>

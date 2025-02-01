@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Работа с формами</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Работа с формами</h1>
+        <h3>Формы</h3>
+        <p>Формы в <b>html</b> представляют один из способов для ввода и отправки данных. Все поля формы помещаются между тегами <b>< form ></b> и <b>< /form ></b>. Например, создадим простейшую форму:</p>
+            <pre style="width: 550px; height: 100px; border: solid 1px silver; padding: 5px; line-height: 1.2;">
+    &lt;body>
+        &lt;form method="post" action="D:/html/урок.html">
+            &lt;input name="login"/>
+            &lt;input type="submit" value="Войти" />
+        &lt;/form>
+    &lt;/body>
+</pre>
+        <p><b>Результат:</b></p>
+        <form methood="post" action="D:/html/урок.html">
+            <input name="login"/>
+            <input type="submit" value="Войти" />
+        </form>
+        <p>Для настройки форм у элемента form определены следующие атрибуты:</p>
+        <ul>
+            <li><b>method</b>: устанавливает метод отправки данных на сервер. Допустимы два значения: post и get.</li>
+            <p>Значение <b>post</b> позволяет передать данные на веб-сервер через специальные заголовки. А значение <b>get</b> позволяет передать данные через строку запроса.</p>
+            <li style="margin-bottom: 15px;"><b>action</b>: устанавливает адрес, на который передаются данные формы</li>
+            <li style="margin-bottom: 10px;"><b>enctype</b>: устанавливает тип передаваемых данных. Он свою очередь может принимать следующие значения:</li>
+            <ul list-style-type="circle">
+                <li style="margin-bottom: 10px;"><b>application/x-www-form-urlencoded</b>: кодировка отправляемых данных по умолчанию</li>
+                <li style="margin-bottom: 10px;"><b>multipart/form-data</b>: эта кодировка применяется при отправке файлов</li>
+                <li style="margin-bottom: 10px;"><b>text/plain</b>: эта кодировка применяется при отправке простой текстовой информации</li>
+            </ul>
+        </ul>
+        <p>у формы установлен метод <b>"post"</b>, то есть все значения формы отправляются в теле запроса, а адресом служит строка <b>D:/html/урок.html</b>. Это просто адрес на главную страницу.</p>
+        <p>Как правило, по указанному адресу работает веб-сервер, который, используя одну из технологий серверной стороны (<b>PHP, NodeJS, ASP.NET</b> и т.д.), может получать запросы и возвращать ответ. В данном же случае мы не будем акцентировать внимание на технологиях серверной стороны, сосредоточимся лишь на тех средствах <b>HTML</b>, которые позволяют отправлять данные на сервер.</p>
+        <h3>Автодополнение</h3>
+        <p>Часто веб-браузеры запоминают вводимые данные, и при вводе браузеры могут выдавать список подсказок из ранее введенных слов:</p>
+        <img src="D:/html/IMG/capture_250125_235623.png" alt="Автодополнение" style="border: 1px solid blue;"/>
+        <p>Это может быть не всегда удобно, и с помощью атрибута <b>autocomplete</b> можно отключить автодополнение:</p>
+        <pre style="width: 550px; height: 80px; border: solid 1px silver; padding: 5px; line-height: 1.2;">
+    &lt;form method="post" autocomplete="off" action="D:/html/урок.html">
+            &lt;input name="login" />
+            &lt;input name="password" />
+            &lt;input type="submit" value="Войти" />
+    &lt;/form>
+</pre>
+    <p>Если нам надо включить автодополнение только для каких-то определенных полей, то мы можем применить к ним атрибут <b>autocomplete="on"</b>:</p>
+    <pre style="width: 550px; height: 80px; border: solid 1px silver; padding: 5px; line-height: 1.2;">
+    &lt;form method="post" autocomplete="off" action="D:/html/урок.html">
+        &lt;input name="login" />
+        &lt;input name="password" autocomplete="on" />
+        &lt;input type="submit" value="Войти" />
+    &lt;/form>
+</pre>
+    <p>Теперь для всей формы, кроме второго поля, будет отключено автодополнение.</p>
+    </body>
+</html>

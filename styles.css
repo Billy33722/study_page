@@ -1,0 +1,120 @@
+.box {
+    background-color: rgba(255, 255, 255, 0.1); /* Прозрачный фон */
+    border-radius: 10px;
+    padding: 30px;
+    width: calc(100% - 100px);
+    height: auto; /* Автоматическая высота */
+    max-height: 500px; /* Максимальная высота */
+    margin: 30px;
+    box-shadow: 0 0 15px rgb(255, 255, 255, 0.5); /* Тень */
+    display: flex; /* Flexbox */
+    flex-direction: row; /* Вертикальное расположение элементов */
+    flex-wrap: wrap; /* Перенос элементов на новую строку */
+    justify-content: center; /* Выравнивание по верхнему краю */
+    align-items: center; /* Центрирование по горизонтали */
+    gap: 10px; /* Расстояние между элементами */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: gradientAnimation2 10s ease infinite; /* Анимация градиента */
+    background: linear-gradient(45deg, #ff6f61, #de6262, #ffb88c, #ff6f61);
+    background-size: 400% 400%;
+    background-repeat: no-repeat; /* Отключаем повторение фона */
+    background-size: cover; /* Масштабируем фон, чтобы он покрывал весь экран */
+    height: 100vh; /* Устанавливаем высоту на весь экран */
+    margin: 0; /* Убираем отступы */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.button {
+    border-radius: 10px;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+	cursor: pointer;
+    border: none;
+}
+
+.button:hover {
+    transform: scale(1.05); /* Увеличение на 5% */
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.button a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: rgb(0, 0, 0); /* Меняем цвет ссылок */
+}
+
+.Htext {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8); /* Свечение */
+}
+
+.btn {
+    display: inline-block; /* Строчно-блочный элемент */
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #000000; /* Белый цвет текста */
+    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 10px; /* Скругляем уголки */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    
+}
+
+.btn:hover {
+    transform: scale(1.05); /* Увеличение на 5% */
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Свечение */
+}
+
+.gradient-text {
+    font-size: 150px; /* Большой размер текста */
+    font-weight: bold; /* Жирный текст */
+    background: linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8, #845ef7, #5c7cfa, #339af0, #22b8cf, #20c997, #51cf66, #94d82d, #fcc419, #ff922b);
+    background-size: 400% 400%;
+    -webkit-background-clip: text; /* Используем фон для текста */
+    -webkit-text-fill-color: transparent; /* Прозрачный цвет текста */
+    background-clip: text; /* Используем фон для текста */
+    animation: gradientAnimation2 10s ease infinite; /* Анимация переливания цвета */
+}
+
+@keyframes gradientAnimation2 {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-text2 {
+    font-size: 150px; /* Большой размер текста */
+    font-weight: bold; /* Жирный текст */
+    background: linear-gradient(150deg, #5c7cfa, #22b8cf, #fcc419, #ff922b);
+    background-size: 400% 400%;
+    -webkit-background-clip: text; /* Используем фон для текста */
+    -webkit-text-fill-color: transparent; /* Прозрачный цвет текста */
+    background-clip: text; /* Используем фон для текста */
+    animation: gradientAnimation2 10s ease infinite; /* Анимация переливания цвета */
+}
